@@ -3,9 +3,11 @@ from django.shortcuts import render, get_object_or_404
 
 from ..models import Question
 from django.db.models import Q, Count
+import logging
+logger = logging.getLogger(__name__) #__name__은 실행되는 파이썬 모듈명 'pybo'가 들어가게 됨.
 
 def index(request):
-    3/0
+    logger.info("INFO 레벨로 출력")
     '''
      pybo 목록출력
     '''
