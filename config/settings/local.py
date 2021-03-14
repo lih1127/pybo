@@ -1,3 +1,4 @@
-from .vase import *
+from .base import *
 
 ALLOWED_HOSTS = []
+

@@ -20,14 +20,19 @@ def signup(request):
         form = UserForm()
     return render(request, 'common/signup.html', {'form': form})
 
+# https://stackoverflow.com/questions/60507625/django-wrong-amount-of-arguments-in-custom-handler
+# 장고 버전에 따라서, 이렇게 해야지 에러가 안남.
 def page_not_found(request, exception):
     """
     404 Page not found
     """
     return render(request, 'common/404.html', {})
 
-def server_error(request, exception):
+def server_error(request, *args, **argv):
     """
     500 Server Error
     """
+    print('werwerrw')
     return render(request, 'common/500.html', {})
+
+
